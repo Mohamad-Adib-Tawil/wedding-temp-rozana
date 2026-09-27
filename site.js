@@ -31,6 +31,8 @@
   if (metaDescription) metaDescription.content = `${config.dateText} • ${config.venueName}`;
   const canonical = document.querySelector('meta[property="og:title"]');
   if (canonical) canonical.content = pageTitle;
+  const canonicalUrl = document.querySelector('meta[property="og:url"]');
+  if (canonicalUrl) canonicalUrl.content = config.links.canonical || location.href;
   document.querySelectorAll('meta[property="og:description"]').forEach((meta) => {
     meta.content = `${config.dateText} • ${config.venueName}`;
   });
